@@ -1,11 +1,11 @@
-# ✅ Task Manager App
+# Task Manager App
 
 A modern **Task Manager Application** built to help users create, manage, and track their daily tasks efficiently.  
 This project is designed with a clean UI and focuses on simplicity, productivity, and scalability.
 
 ---
 
-## 🚀 Features
+## Features
 
 - 📝 Add new tasks
 - ✏️ Edit existing tasks
