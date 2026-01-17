@@ -23,14 +23,14 @@ This project is designed with a clean UI and focuses on simplicity, productivity
 - HTML
 - CSS
 - JavaScript
-- React.js *(if applicable)*
+- React.js 
 
 ### Backend
 - Node.js
 - Express.js
 
 ### Database
-- MongoDB *(if used)*
+- MongoDB
 
 ---
 
