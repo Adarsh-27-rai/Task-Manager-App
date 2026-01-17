@@ -1,6 +1,7 @@
-import { FaTrashAlt, FaRegCheckCircle } from 'react-icons/fa';
+import { FaTrashAlt, FaRegCheckCircle, FaUndoAlt } from 'react-icons/fa';
 import { useContext, useState } from 'react'
 import TaskContext from '/src/context/TaskContext'
+import API from "../api/axios"
 
 const myTasks = () => {
   const { task } = useContext(TaskContext);
@@ -34,6 +35,16 @@ const myTasks = () => {
     }
   }
 
+  async function markDone(t) {
+    await API.put(`/todo/markDone/${t._id}`, {isCompleted: !t.isCompleted})
+    fetchTask();
+  }
+
+  async function deleteTask(tId) {
+    await API.delete(`/todo/${tId}`)
+    fetchTask()
+  }
+
   return (
     <div className='h-screen bg-gray-200 relative'>
       <div className='h-[80%] w-[80%] p-5 bg-white absolute top-20 left-35 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.25)]'>
@@ -55,17 +66,23 @@ const myTasks = () => {
           {task
             .filter(item => priority === "all" || item.priority === priority)
             .map(item => (
-              <div key={item.id} className={`h-12 min-h-fit my-4 px-8 py-2 w-full rounded-2xl bg-gray-100 flex justify-between items-center border-l-5 ${displayPriority(item.priority).border}`}>
+              <div key={item.id} className={`h-12 min-h-fit my-4 px-8 py-2 w-full rounded-2xl bg-gray-100 flex justify-between items-center border-l-5 ${item.isCompleted ? "border-gray-500" : displayPriority(item.priority).border}`}>
                 <div className="currentTask w-80">
-                  <div className={`text-lg font-semibold text-blue-700 ${displayPriority(item.priority).text}`}>{item.title}</div>
-                  <div className={`text-2xs text-blue-700 ${displayPriority(item.priority).text}`}>{item.description}</div>  
+                  <div className={`text-lg font-semibold text-blue-700 ${item.isCompleted ? "text-gray-500 line-through" : displayPriority(item.priority).text}`}>{item.title}</div>
+                  <div className={`text-2xs text-blue-700 ${item.isCompleted ? "text-gray-500 line-through" : displayPriority(item.priority).text}`}>{item.description}</div>  
                 </div>
                 <div className="dueDate w-fit">
-                  <div className={`text-lg text-blue-700 font-semibold ${displayPriority(item.priority).text}`}>Due: {item.deadline.split("T")[0]}</div>
+                  <div className={`text-lg text-blue-700 font-semibold ${item.isCompleted ? "text-gray-500 line-through" : displayPriority(item.priority).text}`}>Due: {item.deadline.split("T")[0]}</div>
                 </div>
-                <div className={`function flex justify-center item-center gap-5 text-2xl ${displayPriority(item.priority).text}`}>
-                  <FaRegCheckCircle />
-                  <FaTrashAlt />           
+                <div className={`function flex justify-center item-center gap-5 text-2xl ${item.isCompleted ? "text-gray-500 line-through" : displayPriority(item.priority).text}`}>
+                  {item.isCompleted 
+                  ?
+                  <FaUndoAlt className={`h-6 w-fit font-semibold cursor-pointer transition-all duration-300 ease-in-outhover:scale-110 hover:rotate-12 ${task.isCompleted ? "text-gray-400" : priority.text}`} onClick={() => markDone(item)}/>
+                  :
+                  <FaRegCheckCircle className={`h-6 w-fit font-semibold cursor-pointer transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-12 ${task.isCompleted ? "text-gray-400" : priority.text}`} onClick={() => markDone(item)}/>
+                  }
+                  {/* <FaRegCheckCircle onClick={() => markDone(item)}/> */}
+                  <FaTrashAlt onClick={() => deleteTask(item._id)}/>           
                 </div>
               </div>
             ))}
