@@ -17,7 +17,7 @@ This project is designed with a clean UI and focuses on simplicity, productivity
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - HTML
@@ -34,6 +34,5 @@ This project is designed with a clean UI and focuses on simplicity, productivity
 
 ---
 
-## 📂 Project Structure
 
 
