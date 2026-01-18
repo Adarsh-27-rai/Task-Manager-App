@@ -31,18 +31,27 @@ const connectDB = async () => {
   }
 };
 
-app.get("/", async (req, res) => {
+app.use(async (req,res,next) => {
   try {
     await connectDB();
-    res.send("Backend running successfully!");
-  } catch {
+    next();
+  }catch {
     res.status(500).send("MongoDB connection failed");
   }
-});
+})
 
-// app.get("/", (req,res) => {
-//   res.send("Hello World!!")
-// })
+// app.get("/", async (req, res) => {
+//   try {
+//     await connectDB();
+//     res.send("Backend running successfully!");
+//   } catch {
+//     res.status(500).send("MongoDB connection failed");
+//   }
+// });
+
+app.get("/", (req,res) => {
+  res.send("Hello World!!")
+})
 
 // app.listen(port, () => {
 //   console.log(`Example app listening on port ${port}`)
