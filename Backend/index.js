@@ -4,7 +4,6 @@ require("dotenv").config()
 const mongoose = require("mongoose")
 const cors = require("cors")
 
-
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
@@ -57,5 +56,4 @@ app.get("/", (req,res) => {
 //   console.log(`Example app listening on port ${port}`)
 // })
 
-// Export for Vercel
 module.exports = app;
