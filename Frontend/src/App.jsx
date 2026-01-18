@@ -25,7 +25,7 @@ function App() {
   async function fetchTask() {
     const token = localStorage.getItem("token");
     if (!token) return;
-    const res = await API.get("/todo");
+    const res = await API.get("/todo", { header: { Authorization: `Bearer ${token}`}});
     setTasks(res.data);
   }
 
@@ -37,8 +37,11 @@ function App() {
 
   useEffect(() => {
     fetchTask();
-    task_length()
-  })
+  }, []); // run once
+
+  useEffect(() => {
+    task_length();
+  }, [task]);
 
   // useEffect(() => {
   //   task_length()
