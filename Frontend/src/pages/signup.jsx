@@ -19,6 +19,7 @@ const Signup = () => {
 
     async function handleSignup() {
       try {
+        localStorage.removeItem("token");
         await API.post("/auth/signup", form);
         console.log(form);
         navigate("/login");
