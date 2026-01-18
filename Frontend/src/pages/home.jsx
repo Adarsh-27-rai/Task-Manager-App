@@ -141,7 +141,7 @@ const home = () => {
                 </div>
                 : ""}
 
-                <img src="src/assets/8kdb39e5o0n7ocjtpfrvduecsd.png" alt="logo" className='h-8 absolute left-2 top-2'/>
+                <img src="/8kdb39e5o0n7ocjtpfrvduecsd.png" alt="logo" className='h-8 absolute left-2 top-2'/>
             </div>
     )
 }
