@@ -2,7 +2,7 @@ import axios from "axios";
 import 'dotenv/config'; 
 
 const API = axios.create({
-  baseURL: process.env.baseURL,
+  baseURL: import.meta.env.VITE_BASE_URL,
 });
 
 API.interceptors.request.use((req) => {
