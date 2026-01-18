@@ -20,6 +20,7 @@ const Signup = () => {
     async function handleSignup() {
       try {
         await API.post("/auth/signup", form);
+        console.log(form);
         navigate("/login");
       } catch (error) {
         console.log(error.response?.data?.message || "Signup failed");
