@@ -56,7 +56,13 @@ function App() {
             } 
             />
           <Route path="/about" element={<About />} />
-          <Route path="/mytasks" element={<MyTasks />} />
+          <Route path="/mytasks" element={
+            <ProtectedRoute>
+              <MyTasks />
+            </ProtectedRoute>
+            
+            } 
+            />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
