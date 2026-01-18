@@ -31,7 +31,7 @@ const Login = () => {
   }
 
   return (  
-    <div className="min-h-screen min-w-screen flex relative bg-[url(src/assets/planning_app.png)] bg-no-repeat bg-cover">
+    <div className="min-h-screen min-w-screen flex relative bg-[url(/planning_app.png)] bg-no-repeat bg-cover">
       <div className="w-full h-fit max-w-md bg-white p-8 rounded-2xl shadow-lg top-50 left-30 absolute">
         <h2 className="text-2xl font-bold text-center mb-6">Welcome Back</h2>
 
