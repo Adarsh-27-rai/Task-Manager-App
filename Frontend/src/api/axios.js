@@ -1,7 +1,8 @@
 import axios from "axios";
+import 'dotenv/config'; 
 
 const API = axios.create({
-  baseURL: "https://task-manager-app-12-quvk.onrender.com/api",
+  baseURL: process.env.baseURL,
 });
 
 API.interceptors.request.use((req) => {
