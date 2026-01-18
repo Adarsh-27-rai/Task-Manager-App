@@ -10,12 +10,15 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/auth", require("../Routes/auth"))
-app.use("/api/todo", require("../Routes/tasks"))
+app.use("/api/auth", require("./Routes/auth"))
+app.use("/api/todo", require("./Routes/tasks"))
 
-// mongoose.connect(process.env.MONGO_URI)
-// .then(console.log("MongoDB connected"))
-// .catch(err => console.log(err));
+mongoose.connect(process.env.MONGO_URI)
+.then(console.log("MongoDB connected"))
+.catch(err => console.log(err));
+
+let isConnected = false;
+
 const connectDB = async () => {
   if (isConnected) return;
   try {
@@ -37,9 +40,9 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.get("/", (req,res) => {
-  res.send("Hello World!!")
-})
+// app.get("/", (req,res) => {
+//   res.send("Hello World!!")
+// })
 
 // app.listen(port, () => {
 //   console.log(`Example app listening on port ${port}`)
