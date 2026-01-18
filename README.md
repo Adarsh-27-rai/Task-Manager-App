@@ -34,4 +34,10 @@ This project is designed with a clean UI and focuses on simplicity, productivity
 
 ---
 
+### Vercel Link
+
+- https://task-manager-app-a4xn.vercel.app/
+
+---
+
 
