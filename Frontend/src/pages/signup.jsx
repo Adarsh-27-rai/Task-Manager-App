@@ -32,7 +32,7 @@ const Signup = () => {
 
   return (
     <div className='h-screen w-screen bg-gray-100'>
-      <div className="min-h-screen relative bg-gray-100 bg-[url(Frontend/public/planning_app.png)] bg-cover bg-no-repeat">
+      <div className="min-h-screen relative bg-gray-100 bg-[url(public/planning_app.png)] bg-cover bg-no-repeat">
         <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg absolute top-50 left-30">
           <h2 className="text-2xl font-bold text-center mb-6">Create Account</h2>
 
