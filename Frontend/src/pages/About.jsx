@@ -39,7 +39,7 @@ const About = () => {
         </div>
       </section>
 
-      <img src="/task-icon.png" alt="png" className='h-100 absolute right-15 top-50' />
+      {/* <img src="/task-icon.png" alt="png" className='h-100 absolute right-15 top-50' /> */}
       <img src="/8kdb39e5o0n7ocjtpfrvduecsd.png" alt="logo" className='h-10 absolute left-5 top-4' />
     </div>
   )
