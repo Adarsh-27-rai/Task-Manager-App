@@ -1,8 +1,8 @@
 import axios from "axios";
-import 'dotenv/config'; 
+// import 'dotenv/config'; 
 
 const API = axios.create({
-  baseURL: "https://task-backend-chi.vercel.app/api",
+  baseURL: "http://localhost:3000/api/",
 });
 
 API.interceptors.request.use((req) => {

@@ -12,32 +12,32 @@ app.use(cors());
 app.use("/api/auth", require("./Routes/auth"))
 app.use("/api/todo", require("./Routes/tasks"))
 
-// mongoose.connect(process.env.MONGO_URI)
-// .then(console.log("MongoDB connected"))
-// .catch(err => console.log(err));
+mongoose.connect(process.env.MONGO_URI)
+.then(console.log("MongoDB connected"))
+.catch(err => console.log(err));
 
-let isConnected = false;
+// let isConnected = false;
 
-const connectDB = async () => {
-  if (isConnected) return;
-  try {
-    await mongoose.connect(process.env.MONGO_URI);
-    isConnected = true;
-    console.log("MongoDB connected");
-  } catch (err) {
-    console.error("MongoDB connection error:", err);
-    throw err;
-  }
-};
+// const connectDB = async () => {
+//   if (isConnected) return;
+//   try {
+//     await mongoose.connect(process.env.MONGO_URI);
+//     isConnected = true;
+//     console.log("MongoDB connected");
+//   } catch (err) {
+//     console.error("MongoDB connection error:", err);
+//     throw err;
+//   }
+// };
 
-app.use(async (req,res,next) => {
-  try {
-    await connectDB();
-    next();
-  }catch {
-    res.status(500).send("MongoDB connection failed");
-  }
-})
+// app.use(async (req,res,next) => {
+//   try {
+//     await connectDB();
+//     next();
+//   }catch {
+//     res.status(500).send("MongoDB connection failed");
+//   }
+// })
 
 // app.get("/", async (req, res) => {
 //   try {
@@ -52,8 +52,8 @@ app.get("/", (req,res) => {
   res.send("Hello World!!")
 })
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`)
-// })
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
-module.exports = app;
+// module.exports = app;
