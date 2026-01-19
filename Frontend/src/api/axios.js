@@ -2,7 +2,7 @@ import axios from "axios";
 // import 'dotenv/config'; 
 
 const API = axios.create({
-  baseURL: "http://localhost:3000/api/",
+  baseURL: "https://itask-dvxf.onrender.com/api/",
 });
 
 API.interceptors.request.use((req) => {
