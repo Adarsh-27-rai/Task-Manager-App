@@ -55,5 +55,7 @@ app.get("/", (req,res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-
+app.get('/check',function(req,res){
+  res.send("OK");
+})
 // module.exports = app;
