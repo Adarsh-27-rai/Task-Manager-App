@@ -6,7 +6,7 @@ const TaskSchema = new mongoose.Schema({
     deadline: Date,
     priority: {
         type: String,
-        enum: ["low","medium","high","none"],
+        enum: ["all","low","medium","high","none"],
         default: "none"
     },
     isCompleted: {
