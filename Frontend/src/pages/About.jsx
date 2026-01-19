@@ -1,17 +1,46 @@
 import React from 'react'
 import { RiTaskLine } from "react-icons/ri";
-
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
-    <div className='bg-gray-300 h-screen w-screen relative'>
-      <div className='w-220 text-2xl p-4 font-semibold text-black bg-white border-4 border-white rounded-3xl rounded-tl-none absolute top-30 left-20 shadow-[0_0_20px_rgba(0,0,0,0.25)]'>
-        Our Task Manager app is designed to help users organize their daily activities with clarity and efficiency. It provides a simple and intuitive interface where tasks can be created, edited, 
-        categorized, and tracked based on priority and deadlines. Whether it's managing personal goals, school assignments, or work-related responsibilities, the app ensures that everything stays structured in one place.
-        With easy navigation, responsive design, and smooth interactions, users can focus on completing their tasks rather than struggling to manage them. The goal is to boost productivity, save time, and make planning feel effortless—turning everyday to-dos into achievable steps toward success.
-      </div>
-      <img src="/task-icon.png" alt="png" className='h-100 absolute right-15 top-50'/>
-      <img src="/8kdb39e5o0n7ocjtpfrvduecsd.png" alt="logo" className='h-14 absolute left-5 top-10'/>
+    <div className="bg-[url('/planning_app.png')] bg-cover bg-no-repeat h-screen w-screen relative">
+      <section className="min-h-screen flex items-center">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* LEFT CONTENT */}
+          <div>
+            <h1 className="text-4xl sm:text-4xl md:text-5xl font-extrabold leading-tight bg-linear-to-r from-purple-500 to-purple-700 
+               bg-clip-text text-transparent">iTask</h1>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+              {/* <span className='bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'>iTask</span> {" "} */}
+              Focus on what{" "}
+              {/* <Link to="/login" ></Link> */}
+              <span className="bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                matters
+              </span>
+            </h1>
+
+            <p className="mt-6 text-lg md:text-xl text-slate-700 max-w-xl">
+              A powerful yet simple task manager built to help you organize your work,
+              boost productivity, and stay on track every day.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="mt-8 flex gap-4">
+              <Link to="/" >
+                <button className="px-8 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition">
+                  Get Started
+                </button>
+              </Link>
+              
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* <img src="/task-icon.png" alt="png" className='h-100 absolute right-15 top-50' /> */}
+      <img src="/8kdb39e5o0n7ocjtpfrvduecsd.png" alt="logo" className='h-10 absolute left-5 top-4' />
     </div>
   )
 }
