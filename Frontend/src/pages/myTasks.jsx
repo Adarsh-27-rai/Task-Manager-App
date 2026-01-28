@@ -4,7 +4,7 @@ import TaskContext from '/src/context/TaskContext'
 import API from "../api/axios"
 
 const myTasks = () => {
-  const { task } = useContext(TaskContext);
+  const { task, fetchTask } = useContext(TaskContext);
   const [priority, setPriority] = useState("all");
 
   function displayPriority(p) {
