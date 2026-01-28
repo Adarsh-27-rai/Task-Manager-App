@@ -48,13 +48,13 @@ function App() {
       <TaskContext.Provider value = {{length, task, setTasks, fetchTask}}>
         <Navbar />
         <Routes>
-          <Route path="/" element={
+          <Route path="/dashboard" element={
             <ProtectedRoute>
               <Home />
             </ProtectedRoute>
             } 
             />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<About />} />
           <Route path="/mytasks" element={
             <ProtectedRoute>
               <MyTasks />

@@ -22,10 +22,10 @@ const Navbar = () => {
                 'h-8 width-fit px-2 text-lg hover:border-b-3 hover:border-purple-600 cursor-pointer transition-all duration-100 ease-in-out'
                 }> Home
             </NavLink>
-            <NavLink to="/about" className={({ isActive }) => 
+            <NavLink to="/dashboard" className={({ isActive }) => 
                 isActive ? 'h-8 width-fit px-2 text-lg cursor-pointer border-b-3 border-blue-600' : 
                 'h-8 width-fit px-2 text-lg hover:border-b-3 hover:border-purple-600 cursor-pointer transition-all duration-100 ease-in-out'}>
-                About
+                Dashboard
             </NavLink>
             <NavLink to="/mytasks" className={({ isActive }) => 
                 isActive ? 'h-8 width-fit px-2 text-lg cursor-pointer border-b-3 border-blue-600' : 

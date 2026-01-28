@@ -27,12 +27,16 @@ const About = () => {
 
             {/* CTA Buttons */}
             <div className="mt-8 flex gap-4">
-              <Link to="/" >
-                <button className="px-8 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition">
+              <Link to="/login" >
+                <button className="px-8 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition cursor-pointer">
                   Get Started
                 </button>
               </Link>
-              
+              <Link to="/dashboard" >
+                <button className="px-8 py-2.5 bg-white border-2 border-blue-600 text-black font-medium rounded-xl hover:bg-blue-700/15 transition cursor-pointer">
+                  Go to Dashboard
+                </button>
+              </Link>              
 
             </div>
           </div>
