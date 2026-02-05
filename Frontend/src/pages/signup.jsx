@@ -23,8 +23,10 @@ const Signup = () => {
       await API.post("/auth/signup", form);
       console.log(form);
       navigate("/login");
+      alert("Sign Up Successful!");
     } catch (error) {
       console.log(error.response?.data?.message || "Signup failed");
+      alert("Signup failed")
     }
 
   };

@@ -9,8 +9,8 @@ const Navbar = () => {
     const { setTasks } = useContext(TaskContent);
 
     function handleLogout() {
-        localStorage.removeItem("token");
         navigate("/login", {replace: true});
+        localStorage.removeItem("token");
         setTasks([]);
     }
 

@@ -20,13 +20,14 @@ const Login = () => {
 
   async function handleLogin() {
     try {
-      // localStorage.removeItem("token");
       const res = await API.post("/auth/login", form);
       localStorage.setItem("token", res.data.token);
       navigate("/dashboard");
       fetchTask();
+      alert("Login Successful!");
     } catch (error) {
       console.log(error.response?.data?.message || "Login failed");
+      alert("Login failed!")
     }
   }
 
